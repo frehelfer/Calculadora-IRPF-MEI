@@ -1,0 +1,19 @@
+{
+	"name": "calculadora-irpf-mei",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js"
+	},
+	"keywords": [],
+	"author": "Frédéric Helfer",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^3.1.8",
+		"express": "^4.18.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.19"
+	}
+}
