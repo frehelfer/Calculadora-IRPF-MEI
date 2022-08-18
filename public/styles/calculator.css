@@ -140,3 +140,8 @@
 .radio {
 	cursor: pointer;
 }
+
+.contador {
+	display: block;
+	padding: 30px;
+}

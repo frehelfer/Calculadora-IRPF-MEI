@@ -71,6 +71,20 @@ document.querySelectorAll('input').forEach(($input) => {
 					lucroTributavelValue
 				);
 			}
+
+			// Resultado
+			const resultTitle = document.querySelector('#resultTitle');
+			const resultText = document.querySelector('#resultText');
+
+			if (lucroTributavelValue > 2855970) {
+				resultTitle.innerText = 'Declaração Anual do IRPF OBRIGATÓRIA';
+				resultText.innerText =
+					'O Rendimento tributável ficou superiro a R$ 28.559,70. Sendo assim é necessário seguir os passos a seguir para fazer sua declaração.';
+			} else {
+				resultTitle.innerText = 'Declaração Anual do IRPF Não Obrigatória';
+				resultText.innerText =
+					'Atenção, o IRPF deve ser feito se você recebeu outros rendimentos como pessoa física e somado com o Lucro Tributável do MEI ficou superior a R$ 28.559,70.';
+			}
 		},
 		false
 	);
