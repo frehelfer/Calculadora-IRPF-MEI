@@ -1,0 +1,271 @@
+.border {
+	margin: auto;
+	flex: 1 1 0%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1000px;
+	padding: 32px;
+}
+
+/* ------------- Containers and Items ------------- */
+
+.container {
+	max-width: 550px;
+	margin: 15px;
+	padding: 23px;
+	padding-bottom: 8px;
+	border-radius: 13px;
+	border: 1px solid #4343431a;
+	box-shadow: 2px 3px 25px 2px rgba(181, 181, 181, 0.421);
+}
+
+.container h2 {
+	text-align: center;
+}
+
+.items {
+	margin: 18px 0;
+	border-radius: 20px;
+	border: 1px solid #62626217;
+	box-shadow: 2px 3px 25px 2px rgba(181, 181, 181, 0.403);
+}
+
+.with-money-input {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	grid-template-rows: 80px auto;
+	/* minmax(80px, auto) */
+	grid-template-areas:
+		'h i'
+		'c i';
+}
+
+.items h4 {
+	grid-area: h;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 3px 10px 15px;
+}
+
+.items p {
+	grid-area: c;
+}
+
+/* ------------- Money Input ------------- */
+input[data-js='money'] {
+	font-size: 1.5rem;
+	color: var(--gray-800);
+}
+
+.moneyInput {
+	grid-area: i;
+	height: 100%;
+	width: 115px;
+	border-radius: 0 20px 20px 0;
+	text-align: center;
+	padding: 0 10px 0 3px;
+	font-size: 1rem;
+	border: 1px solid #7c7c7c31;
+}
+
+.moneyInput:focus {
+	outline: none !important;
+	border: 2px solid #4343435d;
+	box-shadow: 0 0 10px #9cbabaa4;
+}
+
+.resultados-value {
+	border-radius: 0 30px 30px 0;
+	text-align: center;
+
+	padding: 0 10px 0 10px;
+	margin-left: 5px;
+	font-size: 1rem;
+	border: 1px solid #7c7c7c31;
+	background-color: #98b5e3;
+}
+
+/* ------------- Background Color of Containers, Items and Input ------------- */
+
+/* --- Faturamento --- */
+
+.faturamento {
+	background-color: #f2ffeb;
+}
+
+.faturamento .items {
+	background-color: #d2f0c4;
+}
+
+.faturamento .items input {
+	background: #bde9ab;
+}
+
+/* --- Despesas --- */
+
+.despesas {
+	background-color: #fff4f4;
+}
+
+.despesas .items {
+	background-color: #f2d4d4;
+}
+
+.despesas .items input {
+	background: #e8c2c2;
+}
+
+/* --- Checkbox --- */
+
+.checkbox {
+	background-color: #f7efff;
+}
+
+.checkbox .items .list {
+	padding: 15px;
+	border-radius: 20px 20px 0 0;
+	border: 1px solid #7c7c7c31;
+	background-color: #eadef6;
+}
+
+.list h4 {
+	display: block;
+	margin: 10px;
+	padding: 0px;
+}
+
+.checkbox .items .custom-radio {
+	padding: 18px 0px 18px 140px;
+	border-radius: 0 0 20px 20px;
+	border: 1px solid #7c7c7c31;
+	background-color: #d3bee8;
+}
+
+.radio {
+	cursor: pointer;
+}
+
+/* --- Resultado --- */
+
+.lucro {
+	background-color: var(--gray-100);
+}
+
+.lucro .items {
+	background-color: var(--gray-300);
+}
+
+.lucro .items h4 {
+	padding-top: 13px;
+}
+
+.lucro .items .conta {
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 1.3rem;
+}
+
+.lucro .items .resultados-value {
+	margin-inline-start: 0;
+	text-align: center;
+	padding: 10px;
+	border-radius: 0 0 20px 20px;
+	font-size: 1.6rem;
+	border: 1px solid #7c7c7c31;
+	background-color: var(--gray-400);
+}
+
+/* --- Contador --- */
+
+.contador {
+	display: block;
+	padding: 30px;
+}
+
+/* ------------- Accordion ------------- */
+
+.accordion-header {
+	cursor: pointer;
+	margin-bottom: -10px;
+}
+
+.accordion-header::before {
+	content: '+';
+	font-size: 3.5rem;
+	margin-right: 15px;
+}
+
+.active-header::before {
+	content: '-';
+}
+
+.accordion-content {
+	margin-left: 25px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+
+	text-align: justify;
+	max-height: 0;
+	overflow: hidden;
+	transition: 1s ease max-height;
+	font-size: 1.5rem;
+	color: var(--gray-700);
+}
+
+/* ------------- Contato.html & Thanks.html ------------- */
+
+.contato {
+	background: hsla(209, 100%, 94%, 0.369);
+}
+
+.contato .items {
+	background: hsla(210, 35%, 82%, 0.672);
+	padding: 5px 25px 25px 25px;
+	margin-bottom: 0;
+	width: 400px;
+}
+
+.contato label {
+	font-size: 2rem;
+	margin: 27px 0 1px 7px;
+	text-align: initial;
+	font-weight: 700;
+}
+
+.contato div {
+	display: flex;
+	flex-direction: column;
+}
+
+.contato input,
+textarea,
+button {
+	border: none;
+	border-radius: 5px;
+	color: #777;
+	padding: 10px;
+	width: 100%;
+	resize: none;
+	overflow: auto;
+}
+
+.contato button {
+	color: #777;
+	cursor: pointer;
+	outline: none;
+	font-weight: bold;
+	margin-top: 15px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contato button:hover {
+	background: #eaeaea;
+}
+
+.thanks {
+	text-align: center;
+	background: #d2f0c4;
+}

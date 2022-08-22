@@ -1,0 +1,30 @@
+.contato {
+	background: rgb(226, 226, 226);
+}
+
+.contato div {
+	display: flex;
+	flex-direction: column;
+}
+
+.contato label {
+	font-size: 2rem;
+}
+
+.contato input,
+textarea,
+button {
+	border: none;
+	border-radius: 5px;
+	color: #777;
+	font-size: 18px;
+	outline: none;
+	padding: 15px;
+	width: 100%;
+}
+
+.contato button {
+	color: #777;
+	cursor: pointer;
+	font-weight: bold;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="loremLorem" />
+		<title>Calculadora IRPF - MEI</title>
+		<!-- Fonts  -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Styles  -->
+		<link rel="stylesheet" href="/styles/base.css" />
+		<link rel="stylesheet" href="/styles/calculator.css" />
+		<script src="/scripts/calculator.js" defer></script>
+		<script src="/scripts/accordion.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="navbar-container">
+					<a class="navbar-item" href="/index.html">
+						<img
+							src="/images/Circle-icons-calculator.svg"
+							alt=""
+							width="30"
+							height="24"
+							class="d-inline-block align-text-top"
+						/>
+						<p>Calculadora IRPF - MEI</p>
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class="border">
+				<h1>Calculadora Declaração IRPF - MEI</h1>
+				<p>Ano-Calendário de 2021 - Exercício de 2022</p>
+				<h6>
+					Última atualização em 10/08/2022 |
+					<a
+						target="_blank"
+						href="http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=123084#:~:text=DISPOSI%C3%87%C3%83O%20PRELIMINAR-,Art.,pessoa%20f%C3%ADsica%20residente%20no%20Brasil."
+						>IN RFB n.2065</a
+					>
+				</h6>
+
+				<!-- Receita Bruta Anual  -->
+				<section class="container faturamento">
+					<h2>Insira o valor da Receita Bruta Anual</h2>
+
+					<div class="items with-money-input">
+						<h4>Prestação de Serviços</h4>
+						<input
+							class="moneyInput"
+							type="text"
+							placeholder="R$ 0,00"
+							data-js="money"
+							id="serviços"
+						/>
+					</div>
+
+					<div class="items with-money-input">
+						<h4>
+							Comércio, Indústria e<br />
+							Transporte de Cargas
+						</h4>
+						<input
+							class="moneyInput"
+							type="text"
+							placeholder="R$ 0,00"
+							data-js="money"
+							id="comércio"
+						/>
+					</div>
+
+					<div class="items with-money-input">
+						<h4>Transporte de Passageiros</h4>
+						<input
+							class="moneyInput"
+							type="text"
+							placeholder="R$ 0,00"
+							data-js="money"
+							id="transporte"
+						/>
+					</div>
+				</section>
+
+				<!-- Despesas Anuais  -->
+				<section class="container despesas">
+					<h2>Insira o valor das Despesas Anuais</h2>
+
+					<div class="items with-money-input">
+						<h4 class="accordion-header">
+							Pró-labore, DAS, Mercadorias,<br />
+							Aluguel, Água, Luz e Tel.
+						</h4>
+
+						<input
+							class="moneyInput"
+							type="text"
+							placeholder="R$ 0,00"
+							data-js="money"
+							id="despesas"
+						/>
+
+						<p class="accordion-content">
+							As despesas precisam estar no CNPJ da empresa! As duas despesas mais comuns são o DAS,
+							pago mensalmente por todo dono de uma MEI e o Pró-labore. Você pode declarar até 1
+							salário mínimo de Pró-labore por mês sem pagar nada a mais de imposto, pois já está
+							sendo pago 5% de um salário mínimo na DAS.
+						</p>
+					</div>
+				</section>
+
+				<!-- Radio Checkbox  -->
+				<section class="container checkbox">
+					<h2>Você se enquadra em alguma dessas opções como Pessoa Física em 2021?</h2>
+					<div class="items">
+						<div class="list">
+							<h4>- Recebeu rendimentos isentos acima de R$ 40.000,00?</h4>
+							<h4>- Realiza operações na bolsa de valores?</h4>
+							<h4>- Obeteve receita bruta superior a R$ 142.798,50 em atividade rural?</h4>
+							<h4>- Possui bens no valor acima de R$ 300.000,00?</h4>
+							<h4>- Vendeu imóveis com isenção de IR?</h4>
+						</div>
+
+						<div class="custom-radio">
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="radio"
+									name="myRadioField"
+									id="radio-sim"
+									value="option1"
+								/>
+								<label class="radio form-check-label" for="radio-sim"> Sim (deve declarar) </label>
+							</div>
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="radio"
+									name="myRadioField"
+									id="radio-nao"
+									value="option1"
+									checked="checked"
+								/>
+								<label class="radio form-check-label" for="radio-nao"> Não </label>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Resultado  -->
+				<section class="container lucro">
+					<h2>Resultado</h2>
+
+					<div class="items azul">
+						<h4>Receita Bruta Anual</h4>
+						<p class="conta">0,00 + 0,00 + 50,00</p>
+						<p class="resultados-value" id="receita-bruta-apurado">R$ 0,00</p>
+					</div>
+
+					<div class="items azul">
+						<h4>
+							Lucro Apurado<br />
+							<span>(Receita Bruta - Despesas)</span>
+						</h4>
+						<p class="resultados-value" id="lucro-apurado">R$ 0,00</p>
+					</div>
+
+					<div class="items azul">
+						<h4>
+							Lucro/Rendimento Isento<br />
+							<span>(32% da Prestação de serviço, 8% do comércio e 16% de transporte)</span>
+						</h4>
+
+						<p class="resultados-value" id="lucro-isento">R$ 0,00</p>
+					</div>
+
+					<div class="items azul">
+						<h4>
+							Lucro/Rendimento Tributável<br />
+							<span>(Lucro Apurado menos Rendimento isento)</span>
+						</h4>
+						<p class="resultados-value" id="lucro-tributável">R$ 0,00</p>
+					</div>
+
+					<div class="items azul flex-column contador">
+						<h4 id="resultTitle">Declaração Anual do IRPF Não Obrigatória</h4>
+						<p id="resultText">
+							Atenção, o IRPF deve ser feito se você recebeu outros rendimentos como pessoa física e
+							somado com o Lucro Tributável do MEI ficou superior a R$ 28.559,70.
+						</p>
+					</div>
+				</section>
+
+				<!-- Recomendação de Contador -->
+				<section class="container contador">
+					<h2>Contadores expecialistas em MEI</h2>
+
+					<div class="items contador">
+						<h4>Fulano de tal</h4>
+						<p>É bom!</p>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+			<div>
+				<nav>
+					<a href="/contato.html">Contato</a> |
+					<a href="/privacidade.html">Política de Privacidade</a>
+				</nav>
+				<p>© Copyright 2022 - Calculadora IRPF-MEI</p>
+			</div>
+		</footer>
+	</body>
+</html>
