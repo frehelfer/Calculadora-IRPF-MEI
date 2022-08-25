@@ -43,6 +43,14 @@ document.querySelectorAll('input').forEach(($input) => {
 				receitaBrutaApuradoValue
 			);
 
+			// conta
+			const contaServiço = document.querySelector('#conta-serviço');
+			const contaComércio = document.querySelector('#conta-comércio');
+			const contaTransporte = document.querySelector('#conta-transporte');
+			contaServiço.innerText = Intl.NumberFormat('pt-br').format(serviçosValue);
+			contaComércio.innerText = Intl.NumberFormat('pt-br').format(comércioValue);
+			contaTransporte.innerText = Intl.NumberFormat('pt-br').format(transporteValue);
+
 			// Lucro Apurado
 			const lucroApuradoValue = receitaBrutaApuradoValue - despesasValue;
 
@@ -51,6 +59,12 @@ document.querySelectorAll('input').forEach(($input) => {
 			} else {
 				lucroApurado.innerText = Intl.NumberFormat('pt-br', options).format(lucroApuradoValue);
 			}
+
+			// conta
+			const contaReceitaBruta = document.querySelector('#conta-receita-bruta');
+			const contaDespesas = document.querySelector('#conta-despesas');
+			contaReceitaBruta.innerText = Intl.NumberFormat('pt-br').format(receitaBrutaApuradoValue);
+			contaDespesas.innerText = Intl.NumberFormat('pt-br').format(despesasValue);
 
 			// Lucro Isento
 			const serviçosIsento = serviçosValue * 0.32;
@@ -61,28 +75,51 @@ document.querySelectorAll('input').forEach(($input) => {
 
 			lucroIsento.innerText = Intl.NumberFormat('pt-br', options).format(lucroIsentoValue);
 
+			// conta
+			const contaServiçoPorc = document.querySelector('#conta-serviço-p');
+			const contaComércioPorc = document.querySelector('#conta-comércio-p');
+			const contaTransportePorc = document.querySelector('#conta-transporte-p');
+			contaServiçoPorc.innerText = Intl.NumberFormat('pt-br').format(serviçosValue);
+			contaComércioPorc.innerText = Intl.NumberFormat('pt-br').format(comércioValue);
+			contaTransportePorc.innerText = Intl.NumberFormat('pt-br').format(transporteValue);
+
 			// Lucro Tributável
+
+			// conta
+			const contaLucroApurado = document.querySelector('#conta-lucro-apurado');
+			const contaRendimendoIsento = document.querySelector('#conta-rendimento-isento');
+			contaRendimendoIsento.innerText = Intl.NumberFormat('pt-br').format(lucroIsentoValue);
+
 			const lucroTributavelValue = lucroApuradoValue - lucroIsentoValue;
 
-			if (lucroTributavelValue < 0) {
+			if (lucroTributavelValue <= 0) {
 				lucroTributável.innerText = 'R$ 0,00';
+				contaLucroApurado.innerText = '0';
+				contaLucroApurado.innerText = Intl.NumberFormat('pt-br').format(lucroApuradoValue);
 			} else {
 				lucroTributável.innerText = Intl.NumberFormat('pt-br', options).format(
 					lucroTributavelValue
 				);
+				contaLucroApurado.innerText = Intl.NumberFormat('pt-br').format(lucroApuradoValue);
 			}
 
 			// Resultado
-			const resultTitle = document.querySelector('#resultTitle');
-			const resultText = document.querySelector('#resultText');
+			const resultTitle = document.querySelector('#result-title');
+			const resultText = document.querySelector('#result-text');
 
-			if (lucroTributavelValue > 2855970) {
-				resultTitle.innerText = 'Declaração Anual do IRPF OBRIGATÓRIA';
-				resultText.innerText =
-					'O Rendimento tributável ficou superiro a R$ 28.559,70. Sendo assim é necessário seguir os passos a seguir para fazer sua declaração.';
+			if (lucroTributavelValue >= 28559.7) {
+				lucroTributável.classList.add('red');
+				resultTitle.innerText = 'OBRIGATÓRIA';
+				resultTitle.classList.remove('green');
+				resultTitle.classList.add('red');
+				resultText.innerHTML =
+					'O Rendimento Tributável ficou superior a <b>R$ 28.559,70</b>. Você precisa fazer a declaração no programa disponível pela Receita Federal. Acompanhe abaixo para mais informações.';
 			} else {
-				resultTitle.innerText = 'Declaração Anual do IRPF Não Obrigatória';
-				resultText.innerText =
+				lucroTributável.classList.remove('red');
+				resultTitle.innerText = 'Não Obrigatória';
+				resultTitle.classList.remove('red');
+				resultTitle.classList.add('green');
+				resultText.innerHTML =
 					'Atenção, o IRPF deve ser feito se você recebeu outros rendimentos como pessoa física e somado com o Lucro Tributável do MEI ficou superior a R$ 28.559,70.';
 			}
 		},

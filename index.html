@@ -62,6 +62,7 @@
 							placeholder="R$ 0,00"
 							data-js="money"
 							id="serviços"
+							maxlength="13"
 						/>
 					</div>
 
@@ -76,6 +77,7 @@
 							placeholder="R$ 0,00"
 							data-js="money"
 							id="comércio"
+							maxlength="13"
 						/>
 					</div>
 
@@ -87,6 +89,7 @@
 							placeholder="R$ 0,00"
 							data-js="money"
 							id="transporte"
+							maxlength="13"
 						/>
 					</div>
 				</section>
@@ -96,24 +99,124 @@
 					<h2>Insira o valor das Despesas Anuais</h2>
 
 					<div class="items with-money-input">
-						<h4 class="accordion-header">
-							Pró-labore, DAS, Mercadorias,<br />
-							Aluguel, Água, Luz e Tel.
-						</h4>
+						<div class="accordion-header">
+							<i class="accordion-icon"></i>
+							<h4>
+								Pró-labore, DAS, Mercadorias,<br />
+								Aluguel, Água, Luz e Tel.
+							</h4>
+						</div>
 
+						<p class="accordion-content">
+							Só é possível descontar as despesas que estiverem no CNPJ da empresa comprovados com
+							notas fiscais e recibos.<br /><br />
+							As duas despesas mais comuns são o Pró-labore e o DAS, pago mensalmente por todo dono
+							de uma MEI.<br /><br />
+							No DAS está incluso o valor de 5% de um salário mínimo, destinado ao INSS (Previdência
+							Social), com isso, é possível declarar até 1 salário mínimo de Pró-labore sem pagar
+							nada a mais de impostos. Acima desse valor é necessário pagar uma porcentagem a mais
+							de INSS.<br /><br />
+						</p>
 						<input
 							class="moneyInput"
 							type="text"
 							placeholder="R$ 0,00"
 							data-js="money"
 							id="despesas"
+							maxlength="13"
 						/>
+					</div>
+				</section>
 
+				<!-- Resultado  -->
+				<section class="container lucro">
+					<h2>Resultado</h2>
+
+					<div class="items with-money-input">
+						<div class="accordion-header">
+							<i class="accordion-icon"></i>
+							<div class="texto-conta">
+								<h4>Receita Bruta Anual</h4>
+								<p class="conta">
+									<span id="conta-serviço">0</span> + <span id="conta-comércio">0</span> +
+									<span id="conta-transporte">0</span>
+								</p>
+							</div>
+						</div>
 						<p class="accordion-content">
-							As despesas precisam estar no CNPJ da empresa! As duas despesas mais comuns são o DAS,
-							pago mensalmente por todo dono de uma MEI e o Pró-labore. Você pode declarar até 1
-							salário mínimo de Pró-labore por mês sem pagar nada a mais de imposto, pois já está
-							sendo pago 5% de um salário mínimo na DAS.
+							É a soma de todos os valores recebidos ao longo do ano de 2021.<br /><br />
+						</p>
+						<div class="resultados-value moneyInput" id="receita-bruta-apurado">R$ 0,00</div>
+					</div>
+
+					<div class="items with-money-input">
+						<div class="accordion-header">
+							<i class="accordion-icon"></i>
+							<div class="texto-conta">
+								<h4>Lucro Apurado</h4>
+								<p class="conta">
+									<span id="conta-receita-bruta">0</span> -
+									<span class="red" id="conta-despesas">0</span>
+								</p>
+							</div>
+						</div>
+						<p class="accordion-content">
+							O Lucro Apurado é a Receita Bruta menos as despesas do ano.<br /><br />
+						</p>
+						<div class="resultados-value moneyInput" id="lucro-apurado">R$ 0,00</div>
+					</div>
+
+					<div class="items with-money-input">
+						<div class="accordion-header">
+							<i class="accordion-icon"></i>
+							<div class="texto-conta">
+								<h4>Rendimento Isento</h4>
+								<p class="conta">
+									(<span id="conta-serviço-p">0</span> * 0,32) + (<span id="conta-comércio-p"
+										>0</span
+									>
+									* 0,08) + (<span id="conta-transporte-p">0</span> * 0,16)
+								</p>
+							</div>
+						</div>
+						<p class="accordion-content">
+							Para cada categoria de MEI existe uma parcela isenta de tributação, sendo:<br /><br />
+							32% - Prestação de Serviços.<br />
+							8% - Comércio, Indústria e Transporte de Cargas.<br />
+							16% - Transporte de Passageiros.<br /><br />
+						</p>
+						<div class="resultados-value moneyInput green" id="lucro-isento">R$ 0,00</div>
+					</div>
+
+					<div class="items with-money-input">
+						<div class="accordion-header">
+							<i class="accordion-icon"></i>
+							<div class="texto-conta">
+								<h4>Rendimento Tributável</h4>
+								<p class="conta">
+									<span id="conta-lucro-apurado">0</span> -
+									<span class="green" id="conta-rendimento-isento">0</span>
+								</p>
+							</div>
+						</div>
+						<p class="accordion-content">
+							O Rendimento Tributável é o valor considerado para saber se você deve ou não pagar o
+							imposto de renda pessoa física. Para chegar nessa conta deve se fazer o Lucro Apurado
+							menos o Rendimento Isento.<br /><br />
+						</p>
+						<div class="resultados-value moneyInput green" id="lucro-tributável">R$ 0,00</div>
+					</div>
+
+					<div class="items flex-column contador">
+						<h4>
+							Declaração Anual do IRPF &nbsp
+							<span class="green" id="result-title">Não Obrigatória</span>
+						</h4>
+						<p id="result-text">
+							<br />
+							Atenção, caso você tenha recebido outros valores como Pessoa Física e a soma desses
+							valores com o Rendimento Tributável ficou maior que R$ 28.559,70, será necessário
+							realizar o IRPF. Acompanhe abaixo mais informações.
 						</p>
 					</div>
 				</section>
@@ -125,84 +228,23 @@
 						<div class="list">
 							<h4>- Recebeu rendimentos isentos acima de R$ 40.000,00?</h4>
 							<h4>- Realiza operações na bolsa de valores?</h4>
-							<h4>- Obeteve receita bruta superior a R$ 142.798,50 em atividade rural?</h4>
+							<h4>- Obteve receita bruta superior a R$ 142.798,50 em atividade rural?</h4>
 							<h4>- Possui bens no valor acima de R$ 300.000,00?</h4>
 							<h4>- Vendeu imóveis com isenção de IR?</h4>
 						</div>
 
 						<div class="custom-radio">
-							<div class="form-check">
-								<input
-									class="form-check-input"
-									type="radio"
-									name="myRadioField"
-									id="radio-sim"
-									value="option1"
-								/>
-								<label class="radio form-check-label" for="radio-sim"> Sim (deve declarar) </label>
-							</div>
-							<div class="form-check">
-								<input
-									class="form-check-input"
-									type="radio"
-									name="myRadioField"
-									id="radio-nao"
-									value="option1"
-									checked="checked"
-								/>
-								<label class="radio form-check-label" for="radio-nao"> Não </label>
-							</div>
+							<p>
+								Caso sua resposta seja sim, você é obrigado a realizar a declaração do IRPF
+								independente do resultado acima.
+							</p>
 						</div>
 					</div>
 				</section>
 
-				<!-- Resultado  -->
-				<section class="container lucro">
-					<h2>Resultado</h2>
-
-					<div class="items azul">
-						<h4>Receita Bruta Anual</h4>
-						<p class="conta">0,00 + 0,00 + 50,00</p>
-						<p class="resultados-value" id="receita-bruta-apurado">R$ 0,00</p>
-					</div>
-
-					<div class="items azul">
-						<h4>
-							Lucro Apurado<br />
-							<span>(Receita Bruta - Despesas)</span>
-						</h4>
-						<p class="resultados-value" id="lucro-apurado">R$ 0,00</p>
-					</div>
-
-					<div class="items azul">
-						<h4>
-							Lucro/Rendimento Isento<br />
-							<span>(32% da Prestação de serviço, 8% do comércio e 16% de transporte)</span>
-						</h4>
-
-						<p class="resultados-value" id="lucro-isento">R$ 0,00</p>
-					</div>
-
-					<div class="items azul">
-						<h4>
-							Lucro/Rendimento Tributável<br />
-							<span>(Lucro Apurado menos Rendimento isento)</span>
-						</h4>
-						<p class="resultados-value" id="lucro-tributável">R$ 0,00</p>
-					</div>
-
-					<div class="items azul flex-column contador">
-						<h4 id="resultTitle">Declaração Anual do IRPF Não Obrigatória</h4>
-						<p id="resultText">
-							Atenção, o IRPF deve ser feito se você recebeu outros rendimentos como pessoa física e
-							somado com o Lucro Tributável do MEI ficou superior a R$ 28.559,70.
-						</p>
-					</div>
-				</section>
-
-				<!-- Recomendação de Contador -->
+				<!-- Recomendação de Contador - Entrar em contato -->
 				<section class="container contador">
-					<h2>Contadores expecialistas em MEI</h2>
+					<h2>Se interessou mais?</h2>
 
 					<div class="items contador">
 						<h4>Fulano de tal</h4>
