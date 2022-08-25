@@ -1,0 +1,16 @@
+{
+	"name": "calculadora-irpf-mei",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {},
+	"repository": {
+		"type": "git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"firebase": "^9.9.3"
+	}
+}
