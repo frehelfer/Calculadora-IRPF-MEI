@@ -1,0 +1,303 @@
+.border {
+	margin: auto;
+	flex: 1 1 0%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1000px;
+	padding: 32px;
+}
+
+/* ------------- Containers and Items ------------- */
+
+.container {
+	max-width: 550px;
+	margin: 15px;
+	padding: 23px;
+	padding-bottom: 8px;
+	border-radius: 13px;
+	border: 1px solid #4343431a;
+	box-shadow: 2px 3px 25px 2px rgba(181, 181, 181, 0.421);
+}
+
+.container h2 {
+	text-align: center;
+}
+
+.items {
+	margin: 22px 0;
+	border-radius: 20px;
+	border: 1px solid #62626217;
+	box-shadow: 2px 3px 25px 2px rgba(181, 181, 181, 0.403);
+}
+
+.with-money-input {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	grid-template-rows: minmax(80px, auto) auto;
+	grid-template-areas:
+		'h i'
+		'c i';
+}
+
+.items h4 {
+	grid-area: h;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.items p {
+	grid-area: c;
+}
+
+/* ------------- Money Input ------------- */
+input[data-js='money'] {
+	font-size: 1.5rem;
+	color: var(--gray-800);
+}
+
+.moneyInput {
+	grid-area: i;
+	height: 100%;
+	width: 115px;
+	border-radius: 0 20px 20px 0;
+	text-align: center;
+	padding: 0 10px 0 3px;
+	font-size: 1.6rem;
+	border: 1px solid #7c7c7c31;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.moneyInput:focus {
+	outline: none !important;
+	border: 2px solid #4343435d;
+	box-shadow: 0 0 10px #9cbabaa4;
+}
+
+/* ------------- Background Color of Containers, Items and Input ------------- */
+
+/* --- Faturamento --- */
+
+.faturamento {
+	background-color: #f4ffee;
+}
+
+.faturamento .items {
+	background-color: #d5eec7;
+}
+
+.faturamento .items input {
+	background: #c0e7a9;
+}
+
+.faturamento .items input:focus,
+.faturamento .items input:hover {
+	background: #cdf3b5;
+}
+
+/* --- Despesas --- */
+
+.despesas {
+	background-color: #fff2f2;
+}
+
+.despesas .items {
+	background-color: #f6d7d7;
+}
+
+.despesas .items input {
+	background: #ebc3c3;
+}
+
+.despesas .items input:focus,
+.despesas .items input:hover {
+	background: #ffd0d0;
+}
+
+/* --- Resultado --- */
+
+.lucro {
+	background-color: #eef6fd;
+}
+
+.lucro .items {
+	background-color: #cde0ef;
+}
+
+.lucro .items .texto-conta {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.lucro .items .texto-conta p {
+	color: var(--gray-600);
+	font-size: 1.3rem;
+}
+
+.lucro .items .resultados-value {
+	padding: 7px;
+	font-size: 1.6rem;
+	border: 1px solid #7c7c7c31;
+	background-color: #c0daec;
+}
+
+.green {
+	color: var(--green);
+}
+
+.red {
+	color: var(--red);
+}
+
+#result-title {
+	text-decoration: underline;
+}
+
+/* --- Checkbox --- */
+
+.checkbox {
+	background-color: #f7f2ff;
+}
+
+.checkbox .items .list {
+	padding: 15px;
+	border-radius: 20px 20px 0 0;
+	border: 1px solid #7c7c7c31;
+	background-color: #e4daf6;
+}
+
+.list h4 {
+	display: block;
+	margin: 10px;
+	padding: 0px;
+}
+
+.checkbox .items .custom-radio {
+	padding: 25px;
+	border-radius: 0 0 20px 20px;
+	border: 1px solid #7c7c7c31;
+	background-color: #d4c5f2;
+}
+
+.radio {
+	cursor: pointer;
+}
+
+/* --- Contador --- */
+
+.contador {
+	display: block;
+	padding: 30px;
+}
+
+/* ------------- Accordion ------------- */
+
+.accordion-header {
+	display: grid;
+	grid-template-columns: 60px auto;
+	grid-template-areas: 'icon header';
+	cursor: pointer;
+	align-items: center;
+	padding: 6px;
+}
+
+.despesas .items .accordion-header:hover {
+	background-color: #f9dede;
+	border-radius: 20px 0 0 20px;
+}
+
+.lucro .items .accordion-header:hover {
+	background-color: #d4e8f7;
+	border-radius: 20px 0 0 20px;
+}
+
+.accordion-header h4 {
+	grid-area: header;
+}
+
+.accordion-icon {
+	grid-area: icon;
+	padding-left: 4px;
+	content: url(/images/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
+}
+
+.accordion-icon .active-header {
+	content: url(/images/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
+}
+
+.accordion-content {
+	margin-left: 25px;
+	margin-right: 20px;
+	/* margin-bottom: 10px; */
+
+	text-align: justify;
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.5s ease max-height;
+	font-size: 1.5rem;
+	color: var(--gray-700);
+}
+
+/* ------------- Contato.html & Thanks.html ------------- */
+
+.contato {
+	background-color: #eef6fd;
+}
+
+.contato .items {
+	background-color: #cde0ef;
+	padding: 5px 25px 25px 25px;
+	margin-bottom: 15px;
+	width: 400px;
+}
+
+.contato label {
+	font-size: 2rem;
+	margin: 27px 0 1px 7px;
+	text-align: initial;
+	font-weight: 700;
+}
+
+.contato div {
+	display: flex;
+	flex-direction: column;
+}
+
+.contato input,
+textarea,
+button {
+	border: none;
+	border-radius: 5px;
+	color: #777;
+	padding: 6px;
+	width: 100%;
+	resize: none;
+	overflow: auto;
+}
+
+.contato button {
+	color: #777;
+	cursor: pointer;
+	outline: none;
+	font-weight: bold;
+	margin-top: 15px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contato button:hover {
+	background: #eaeaea;
+}
+
+.thanks {
+	text-align: center;
+	background: #d2f0c4;
+}
+
+.privacidade {
+	padding: 20px;
+}
