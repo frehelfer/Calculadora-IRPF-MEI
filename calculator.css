@@ -223,11 +223,11 @@ input[data-js='money'] {
 .accordion-icon {
 	grid-area: icon;
 	padding-left: 4px;
-	content: url(/images/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
+	content: url(/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
 }
 
 .accordion-icon .active-header {
-	content: url(/images/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
+	content: url(/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
 }
 
 .accordion-content {
@@ -300,4 +300,54 @@ button {
 
 .privacidade {
 	padding: 20px;
+}
+
+@media (max-width: 600px) {
+	body {
+		font-size: 1.5rem;
+	}
+
+	h1 {
+		margin: 0 25px 10px 25px;
+	}
+
+	h4 {
+		padding: 10px 5px 10px 15px;
+	}
+
+	.border {
+		padding: 20px 3px 20px 3px;
+	}
+
+	.container {
+		padding: 10px;
+		padding-bottom: 5px;
+		margin: 15px 0 15px 0;
+	}
+
+	.items {
+		margin: 13px 0 13px 0;
+	}
+
+	.accordion-header {
+		display: grid;
+		grid-template-columns: 35px auto;
+		grid-template-areas: 'icon header';
+		cursor: pointer;
+		align-items: center;
+		padding: 6px;
+	}
+
+	.accordion-icon {
+		padding: 0;
+	}
+
+	.accordion-content {
+		font-size: 1.3rem;
+		text-align: left;
+	}
+
+	.contador {
+		padding: 13px;
+	}
 }
