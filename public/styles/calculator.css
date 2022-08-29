@@ -80,6 +80,17 @@ input[data-js='money'] {
 
 /* ------------- Background Color of Containers, Items and Input ------------- */
 
+.aviso-legal {
+	font-size: 1.4rem;
+	border: 1px solid #f6414177;
+	background: #ffdfdf95;
+}
+
+.aviso-legal p {
+	font-size: 1.3rem;
+	margin: 8px 0 8px 0;
+}
+
 /* --- Faturamento --- */
 
 .faturamento {
@@ -223,11 +234,11 @@ input[data-js='money'] {
 .accordion-icon {
 	grid-area: icon;
 	padding-left: 4px;
-	content: url(/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
+	content: url(/images/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
 }
 
 .accordion-icon .active-header {
-	content: url(/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
+	content: url(/images/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
 }
 
 .accordion-content {
@@ -251,6 +262,7 @@ input[data-js='money'] {
 
 .contato .items {
 	background-color: #cde0ef;
+	padding-top: 10px;
 	padding: 5px 25px 25px 25px;
 	margin-bottom: 15px;
 	width: 400px;
@@ -300,6 +312,10 @@ button {
 
 .privacidade {
 	padding: 20px;
+}
+
+.privacidade li {
+	margin-left: 18px;
 }
 
 @media (max-width: 600px) {

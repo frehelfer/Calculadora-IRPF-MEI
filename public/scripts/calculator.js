@@ -119,8 +119,9 @@ document.querySelectorAll('input').forEach(($input) => {
 				resultTitle.innerText = 'Não Obrigatória';
 				resultTitle.classList.remove('red');
 				resultTitle.classList.add('green');
-				resultText.innerHTML =
-					'Atenção, o IRPF deve ser feito se você recebeu outros rendimentos como pessoa física e somado com o Lucro Tributável do MEI ficou superior a R$ 28.559,70.';
+				resultText.innerHTML = `Se você recebeu outros valores como Pessoa Física e a soma desses valores com o
+				Rendimento Tributável ficou maior que R$ 28.559,70, será necessário realizar o IRPF.
+				Acompanhe abaixo mais informações.`;
 			}
 		},
 		false

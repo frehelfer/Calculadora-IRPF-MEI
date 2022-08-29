@@ -7,13 +7,13 @@ import { initializeApp } from 'firebase/app';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-	apiKey: 'AIzaSyBcJ3RpwigBUK_jAGbeWlt9dzWF0zbq3rA',
-	authDomain: 'calculadora-irpf-mei.firebaseapp.com',
-	projectId: 'calculadora-irpf-mei',
-	storageBucket: 'calculadora-irpf-mei.appspot.com',
-	messagingSenderId: '962443985041',
-	appId: '1:962443985041:web:24a45fb692017dc2ed3f30',
-	measurementId: 'G-11KELZS5Y9',
+	apiKey: 'AIzaSyAxFgq7SABzM4vuWlP8CQfSjtIekZJGUoc',
+	authDomain: 'calc-mei.firebaseapp.com',
+	projectId: 'calc-mei',
+	storageBucket: 'calc-mei.appspot.com',
+	messagingSenderId: '113866804734',
+	appId: '1:113866804734:web:2e266d8643fff5b7ca04af',
+	measurementId: 'G-L2VJHKXG14',
 };
 
 // Initialize Firebase
