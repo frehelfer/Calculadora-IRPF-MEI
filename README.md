@@ -35,7 +35,7 @@ I hosted and deployed it with fire-base and I intend to keep it online and up-to
 
 ## Technical details
 
-All the input tag have a mask to prevent the user inputting letters and other characters not allowed, just numbers. The mask also put the Brazilian standard semicolonand dots in the right place.
+All the input tag have a mask to prevent the user inputting letters and other characters not allowed, just numbers. The mask also set the Brazilian standard semicolonand dots in the right place.
 
 All calculations are performed automatically when typing the number.
 There are four results, being:
@@ -48,6 +48,8 @@ There are four results, being:
 If the Taxable Profit is greater than R$ 28.559,70 the individual business owner have to declare and pay the personal annual tax return.
 
 There is a message in the result container that changes according to the result.
+
+I used javascript to capture, work with the data and show it to the user automatically.
 
 ## About CS50
 
