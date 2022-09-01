@@ -19,6 +19,18 @@ I made this website with HTML, CSS and JavaScript.
 There is no database or user login, because we are dealing with private data that people would not like to share, so the calculations are all done on the client side with javascript.
 I hosted and deployed it with fire-base.
 
+## How to launch application
+
+#### You can access it here: https://calcmei.com.br/
+
+or
+
+1. Check that you have the extension Live Server.
+2. Clone the code Branch: https://github.com/frehelfer/cs50-final-project-Calculadora-IRPF-MEI/tree/Live-Server-Branch.
+3. Run Live Server in index.html page.
+4. In your browser go to http://127.0.0.1:5500/index.html
+5. You are ready to go!
+
 ## About CS50
 
 CS50 is a openware course from Havard University and taught by David J. Malan
