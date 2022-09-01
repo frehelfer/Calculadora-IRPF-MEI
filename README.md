@@ -4,8 +4,6 @@
 
 #### Website: https://calcmei.com.br/
 
-#### Description:
-
 ## Explaining the project
 
 Hello! My name is Frédéric, I’m from Brazil and this is my final project for the CS50 course.
@@ -13,13 +11,13 @@ Hello! My name is Frédéric, I’m from Brazil and this is my final project for
 My project is a website to help the Brazilian individual business owner to know if they have to declare and pay the personal annual tax return or not.
 The user needs to fill only 4 data inputs to have a final result with a well description count. Furthermore, there is a tutorial teaching how to fill the personal annual tax return.
 
+The idea was to make it very simple and direct, because I only found some complicated posts explaining the subject.
+
 ## Features
 
-I made this website with HTML, CSS, JavaScript, and I hosted it with fire-based
-
-### Database
-
-### Storing and displaying posts.
+I made this website with HTML, CSS and JavaScript.
+There is no database or user login, because we are dealing with private data that people would not like to share, so the calculations are all done on the client side with javascript.
+I hosted and deployed it with fire-base.
 
 ## About CS50
 

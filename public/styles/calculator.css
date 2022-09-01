@@ -234,11 +234,11 @@ input[data-js='money'] {
 .accordion-icon {
 	grid-area: icon;
 	padding-left: 4px;
-	content: url(/images/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
+	content: url(images/expand_more_FILL0_wght400_GRAD200_opsz48.svg);
 }
 
 .accordion-icon .active-header {
-	content: url(/images/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
+	content: url(images/expand_less_FILL0_wght400_GRAD200_opsz48.svg);
 }
 
 .accordion-content {
