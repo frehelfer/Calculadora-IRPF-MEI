@@ -4,6 +4,8 @@
 
 #### Website: https://calcmei.com.br/
 
+#### iOS app: https://github.com/frehelfer/calcMEI
+
 ## Explaining the project
 
 Hello! My name is Frédéric, I’m from Brazil and this is my final project for the CS50 course.
