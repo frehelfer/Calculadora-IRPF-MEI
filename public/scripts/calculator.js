@@ -107,20 +107,20 @@ document.querySelectorAll('input').forEach(($input) => {
 			const resultTitle = document.querySelector('#result-title');
 			const resultText = document.querySelector('#result-text');
 
-			if (lucroTributavelValue >= 28559.7) {
+			if (lucroTributavelValue >= 30639.90) {
 				lucroTributável.classList.add('red');
 				resultTitle.innerText = 'OBRIGATÓRIA';
 				resultTitle.classList.remove('green');
 				resultTitle.classList.add('red');
 				resultText.innerHTML =
-					'O Rendimento Tributável ficou superior a <b>R$ 28.559,70</b>. Você precisa fazer a declaração no programa disponível pela Receita Federal. Acompanhe abaixo para mais informações.';
+					'O Rendimento Tributável ficou superior a <b>R$ 30.639,90</b>. Você precisa fazer a declaração no programa disponível pela Receita Federal. Acompanhe abaixo para mais informações.';
 			} else {
 				lucroTributável.classList.remove('red');
 				resultTitle.innerText = 'Não Obrigatória';
 				resultTitle.classList.remove('red');
 				resultTitle.classList.add('green');
 				resultText.innerHTML = `Se você recebeu outros valores como Pessoa Física e a soma desses valores com o
-				Rendimento Tributável ficou maior que R$ 28.559,70, será necessário realizar o IRPF.
+				Rendimento Tributável ficou maior que R$ 30.639,90, será necessário realizar o IRPF.
 				Acompanhe abaixo mais informações.`;
 			}
 		},
